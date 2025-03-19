@@ -7,52 +7,59 @@
 * **Instance type:** `t2.micro`
 * Create a new Keypair with the Name `CICDLab-Keypair`
 * In security groups, include ports `22 (SSH)` , `80 (HTTP)` and `8080 (jenkins)`
+* Go to Advanced Details -> User Data -> Add the following code which installs Java and Jenkins on the EC2.
+```
+#!/bin/bash
+# Set the hostname
+sudo hostnamectl set-hostname CICDLab
+
+# Update package lists
+sudo apt update
+
+# Install required packages
+sudo apt install -y wget unzip
+
+# Install Java Runtime Environment
+sudo apt install -y fontconfig openjdk-17-jre
+
+# Check Java version
+java -version
+
+# Download Jenkins key
+sudo wget -O /usr/share/keyrings/jenkins-keyring.asc https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key
+
+# Add Jenkins to the sources list
+echo "deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] https://pkg.jenkins.io/debian-stable binary/" | sudo tee /etc/apt/sources.list.d/jenkins.list > /dev/null
+
+# Update package lists again to include Jenkins
+sudo apt-get update
+
+# Install Jenkins
+sudo apt-get install -y jenkins
+
+# Enable and start Jenkins service
+sudo systemctl enable jenkins
+sudo systemctl start jenkins
+
+# Check Jenkins status
+sudo systemctl status jenkins
+```
+![image](https://github.com/user-attachments/assets/cfad541c-55f6-44ca-ad82-3d31a724c10a)
+
 * **Configure Storage:** 10 GiB
 * Click on `Launch Instance.`
 
 ### Task-1: Install Java
 Once the Anchor EC2 server is up and running, SSH into the machine using `Instance Connect` with the username `ubuntu` and do the following:
-```
-sudo hostnamectl set-hostname CICDLab
-bash
-```
-```
-sudo apt update
-```
-```
-sudo apt install wget unzip -y
-```
-```
-sudo apt install fontconfig openjdk-17-jre
-```
+Verify Java Installation
 ```
 java -version
 ```
-### Task-2: Install Jenkins
-
-```
-sudo wget -O /usr/share/keyrings/jenkins-keyring.asc   https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key
-```
-```
-echo "deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc]"   https://pkg.jenkins.io/debian-stable binary/ | sudo tee   /etc/apt/sources.list.d/jenkins.list > /dev/null
-```
-```
-sudo apt-get update
-```
-```
-sudo apt-get install jenkins
-```
-```
-sudo systemctl enable jenkins
-```
-```
-sudo systemctl start jenkins
-```
+Verify Jenkins Installation
 ```
 sudo systemctl status jenkins
 ```
-### Task-3: Configure Jenkins Server:
-
+### Task-2: Configure Jenkins Server:
 
 Get the **Initial Password** for Jenkins from the below path.
 ```
