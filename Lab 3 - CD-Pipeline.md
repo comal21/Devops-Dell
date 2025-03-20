@@ -101,7 +101,7 @@ sudo docker run -d -p 9999:8080 --name helloworld-container helloworld-image
 
 ```
 
-* Now you can build your **hello-world project** Either by
+* Now you can build your **my-app project** Either by
 1. Clicking on **"Build Now"** or
 2. By **making a small change in Github files**.
 
