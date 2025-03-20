@@ -66,7 +66,13 @@ MAINTAINER "CloudThat"
 # Copy the war file to the images tomcat path
 ADD hello-world-war-1.0.0.war /usr/local/tomcat/webapps/
 ```
+### How This Dockerfile Works
+* It pulls the tomcat:8-jre8 image (which already has Tomcat and JRE 8).
+* It defines the maintainer (informational only).
+* It copies the Java web application (WAR file) into Tomcat's deployment directory.
+* When the container starts, Tomcat will automatically deploy the application, making it accessible via a web browser.
 
+  
 1. Go to your **Jenkins Home page**, click on the **drop-down** on **hello-world project**, and select Configure 
 tab.
 2. Go to **Post Steps Tab**, select **"Run only if the build succeeds"** then click on **Add post-build** step select **Execute shell** from the drop-down and copy paste the below commands in the shell and **Save**
