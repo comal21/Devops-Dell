@@ -110,3 +110,4 @@ sudo docker run -d -p 9999:8080 --name helloworld-container helloworld-image
 To access the Page In Browser Type **"http:// < Your Jenkins Host Public IP >:9999/hello-world-war-1.0.0/"** to see the website
 * **Example:** http://3.95.192.77:9999/hello-world-war-1.0.0/
 ---
+![image](https://github.com/user-attachments/assets/d7e574b2-8795-42a3-8945-4b682e318dd1)
