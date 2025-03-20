@@ -13,7 +13,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'master', url: 'https://github.com/Sruti1512/my-app.git'
+                git branch: 'master', url: 'https://github.com/comal21/my-app.git'
             }
         }
         stage('Build') {
