@@ -26,7 +26,7 @@ Checking the status of the docker
 ```
 service docker status
 ```
-If the service is not active, then we need to start the service
+### If the service is not active, then we need to start the service
 ```
 service docker start
 ```
