@@ -19,7 +19,6 @@ Now, Open the files one by one and replace your regions (**Ex:** ap-south-1) and
 ```
 vi vpc.tf
 ```
-In `vpc.tf` file Add `#` in front of line 12, ie... `enable_classiclink = "false"` and replace your `AZs`
 ```
 cat nat.tf
 ```
