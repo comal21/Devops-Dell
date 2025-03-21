@@ -96,7 +96,7 @@ Save the file using "ESCAPE + :wq!"
 
 Now, Create a new keypair that we use for our EC2 Instance.
 ```
-ssh-keygen -f mykey
+ssh-keygen -f mykey -t rsa
 ```
 ```
 ls
