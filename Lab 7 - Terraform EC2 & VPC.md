@@ -6,16 +6,16 @@
 cd /home/ubuntu/
 ```
 ```
-wget https://s3.ap-south-1.amazonaws.com/files.cloudthat.training/devops/terraform-essentials/lab_10_vpc_v0.13.tar.gz
+wget https://s3.ap-south-1.amazonaws.com/files.cloudthat.training/devops/terraform-essentials/vpc_lab.zip
 ```
 ```
-tar -xvf lab_10_vpc_v0.13.tar.gz
+unzip vpc_lab.zip
 ```
 ```
-cd lab_10_vpc/
+cd vpc_lab/
 ls
 ```
-Now, Open the files one by one and replace your regions (**Ex:** ap-south-1) and for Availability Zones (**Ex:** ap-south-1a)
+Now, Open the files one by one and replace your regions (**Ex:** ap-south-1) and Availability Zones (**Ex:** ap-south-1a)
 ```
 vi vpc.tf
 ```
@@ -147,13 +147,9 @@ terraform apply -auto-approve
 ```
 Once applied, verify that the `EC2 Instance` is created in the `Custom VPC` that we created in Task-1.
 
-Also, to See the `Public IP` of the newly created EC2 Instance use the below command.
-```
-terraform state show aws_instance.example | grep public_ip
-```
 To `SSH` into newly launched EC2, run below command.
 ```
-ssh -i mykey -l ubuntu <Your Public IP>
+ssh -i mykey -l ubuntu <New EC2's Public IP>
 ```
 Once verified, `Exit` from Instance.
 
@@ -166,9 +162,9 @@ terraform destroy -auto-approve
 Remove the directory and Zip file using `rm -rf`
 ```
 cd ..
-rm -rf lab_10_vpc
+rm -rf vpc_lab
 ```
 ```
-rm -rf lab_10_vpc_v0.13.tar.gz
+rm -rf vpc_lab.zip
 ```
-#### =========================Self Exercise Lab 1=========================
+
