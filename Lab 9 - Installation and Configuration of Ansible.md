@@ -188,7 +188,7 @@ ansible all --list-hosts
 
 ### Task 5:  SSH into each of the managed nodes and set the hostname.
 ```
-ssh ec2-user@< Replace Node 1 IP >
+ssh ubuntu@< Replace Node 1 IP >
 ```
 ```
 sudo hostnamectl set-hostname managed-node1
@@ -197,7 +197,7 @@ sudo hostnamectl set-hostname managed-node1
 exit
 ```
 ```
-ssh ec2-user@< Replace Node 2 IP >
+ssh ubuntu@< Replace Node 2 IP >
 ```
 ```
 sudo hostnamectl set-hostname managed-node2
