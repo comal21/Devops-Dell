@@ -162,6 +162,12 @@ exit
 
 Use ping module to check if the managed nodes are available.
 ```
+ansible managed-node1 -m ping
+```
+```
+ansible  managed-node2 -m ping
+```
+```
 ansible all -m ping
 ```
 
