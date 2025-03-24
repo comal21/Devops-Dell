@@ -90,7 +90,7 @@ Add the given content, by pressing "INSERT"
         name: apache2
         #local cache of the package information available from the repositories configured on the system
         update_cache: yes
-        state: latest
+        state: absent
 ```
 Save the file using `ESCAPE + :wq!`
 Now run the playbook 
